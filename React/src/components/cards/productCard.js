@@ -1,33 +1,50 @@
+/* Modelo de producto */
+
 import { Button, Card, CardActions, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
 
-export default function ProductCard({ img, name, price }) {
+const ProductCard = ({ img, model, price }) => {
 
     return (
-        <Card >
+        <Card>
+            {/* Contenedor principal */}
             <CardActionArea>
+                {/* Imagen de producto */}
                 <CardMedia
                     component="img"
                     height="210"
-                    image="https://uvn-brightspot.s3.amazonaws.com/assets/vixes/t/tops-tejidos-tendencia-2020-shein.jpg"
+                    image={img}
                     alt="Ropa"
                 />
-                <CardContent sx={{ py: 0, height: "55px" }}>
-                    <Typography gutterBottom variant="h6" m={0}>
-                        Ropa
+                {/* Informacion de producto */}
+                <CardContent 
+                sx={{ py: 0, height: "55px" }}
+                >
+                    <Typography 
+                    gutterBottom 
+                    variant="h6" 
+                    m={0}
+                    >{model}
                     </Typography>
-                    <Typography variant="subtitle1" color="text.secondary">
-                        30$
+
+                    <Typography 
+                    variant="subtitle1" 
+                    color="text.secondary"
+                    >{price}$
                     </Typography>
                 </CardContent>
             </CardActionArea>
-            <CardActions  sx={{ p: 0 }}>
-                <Button size="small" sx={{m: "0 auto" }}>
-                    Añadir
+            {/* Boton de producto */}
+            <CardActions  
+            sx={{ p: 0 }}
+            >
+                <Button 
+                size="small" 
+                sx={{m: "0 auto" }}
+                >Añadir
                 </Button>
             </CardActions>
         </Card>
     )
 }
 
-
-
+export default ProductCard

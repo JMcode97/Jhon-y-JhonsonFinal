@@ -1,4 +1,4 @@
-import { CssBaseline } from "@mui/material"
+import { CssBaseline } from "@mui/material"       // CssBaseline para ocupar todo el borde de la pantalla
 import { Routes, Route } from "react-router-dom"
 import Home from "./pages/home"
 import Login from "./pages/login"
@@ -7,11 +7,20 @@ import Checkout from "./pages/checkout"
 const App = () => {
   return (
     <>
-      <CssBaseline />
+      <CssBaseline /> 
       <Routes>
-        <Route path="login" element={<Login />} />
-        <Route path="checkout" element={<Checkout />} />
-        <Route path="/" element={<Home />} />
+        <Route 
+        path="login" 
+        element={<Login />} 
+        />
+        <Route 
+        path="checkout" 
+        element={<Checkout />} 
+        />
+        <Route 
+        path="/" 
+        element={<Home />} 
+        />
       </Routes>
     </>
   )

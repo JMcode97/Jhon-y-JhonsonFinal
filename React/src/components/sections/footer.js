@@ -1,3 +1,5 @@
+/* Pie de pagina */
+
 import { Box, IconButton, Link, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import PinterestIcon from '@mui/icons-material/Pinterest';
@@ -5,48 +7,101 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 
 
-export default function Footer() {
+const Footer = () => {
 
+
+    // Estilos generales de los links
     const Enlaces = { color: "#fefae0", textDecoration: "none", cursor: "pointer" }
 
     return (
-        <Box sx={{ bgcolor: "#283618", color: "#fefae0", p: 2 }} >
-            <Container sx={{ display: "flex", justifyContent: "space-between" }}>
-                <Box className="footer menu" sx={{ left: 0, right: 0, textAlign: "center" }}>
+        //Contenedor principal footer
+        <Box 
+        sx={{ bgcolor: "#283618", color: "#fefae0", p: 2 }} 
+        >
+            <Container 
+            sx={{ display: "flex", justifyContent: "space-between" }}
+            >
+                {/* Informacion footer lado izquierdo (enlaces) */}
+                <Box  
+                sx={{ left: 0, right: 0, textAlign: "center" }}
+                >
                     <Box>
-                        <Typography component={Link} to="/" sx={Enlaces}>Quienes somos</Typography>
+                        <Typography 
+                        component={Link} 
+                        to="/" 
+                        sx={Enlaces}
+                        >Quienes somos
+                        </Typography>
                     </Box>
                     <Box>
-                        <Link path="/" sx={Enlaces}>Contáctenos</Link>
+                        <Link 
+                        path="/" 
+                        sx={Enlaces}
+                        >Contáctenos
+                        </Link>
                     </Box>
                     <Box>
-                        <Link path="/" sx={Enlaces}>J&J VIP</Link>
+                        <Link 
+                        path="/" 
+                        sx={Enlaces}
+                        >J&J VIP
+                        </Link>
                     </Box>
                     <Box>
-                        <Link path="/" sx={Enlaces}>Guía de tallas</Link>
+                        <Link 
+                        path="/" 
+                        sx={Enlaces}
+                        >Guía de tallas
+                        </Link>
                     </Box>
                     <Box>
-                        <Link path="/" sx={Enlaces}>Formas de pago</Link>
+                        <Link 
+                        path="/" 
+                        sx={Enlaces}
+                        >Formas de pago
+                        </Link>
                     </Box>
                     <Box>
-                        <Link path="/" sx={Enlaces}>Devolucion</Link>
+                        <Link 
+                        path="/" 
+                        sx={Enlaces}
+                        >Devolución
+                        </Link>
                     </Box>
                 </Box>
-                <Box className="footer socials">
-                    <IconButton component={Link} to="/" sx={Enlaces}>
-                        <FacebookIcon></FacebookIcon>
+                {/* Iconos de redes sociales lado derecho */}
+                <Box>
+                    <IconButton 
+                    component={Link} 
+                    to="/" 
+                    sx={Enlaces}
+                    >
+                    <FacebookIcon></FacebookIcon>
                     </IconButton>
-                    <IconButton component={Link} to="/" sx={Enlaces}>
-                        <InstagramIcon></InstagramIcon>
+                    <IconButton 
+                    component={Link} 
+                    to="/" 
+                    sx={Enlaces}
+                    >
+                    <InstagramIcon></InstagramIcon>
                     </IconButton>
-                    <IconButton component={Link} to="/" sx={Enlaces}>
-                        <PinterestIcon></PinterestIcon>
+                    <IconButton 
+                    component={Link} 
+                    to="/" 
+                    sx={Enlaces}
+                    >
+                    <PinterestIcon></PinterestIcon>
                     </IconButton>
                 </Box>
             </Container>
-            <Box sx={{ width: "100%", textAlign: "center" }} >
-                <Typography>Jhon&Jhonson &reg; 2022 </Typography>
+            {/* Marca registrada footer */}
+            <Box 
+            sx={{ width: "100%", textAlign: "center" }} 
+            >
+            <Typography>Jhon&Jhonson &reg; 2022 </Typography>
             </Box>
         </Box>
     )
 }
+
+export default Footer

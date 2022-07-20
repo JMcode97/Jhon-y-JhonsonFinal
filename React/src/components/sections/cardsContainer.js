@@ -1,12 +1,39 @@
-import { Grid } from "@mui/material"
-import ProductCard from "../cards/productCard"
+/* Contenedor de productos */
 
-export default function CardsContainer() {
+import ProductCard from "../cards/productCard"
+import useApi from "../../hooks/useApi"
+import { Grid } from "@mui/material"
+
+const CardsContainer = ({ peticion }) => {
+
+    // Hook para conectar a BD y obtener items(ropa)
+    const [items] = useApi(peticion)
+
     return (
-        <Grid container gap={4} sx={{ p: 3, justifyContent: "center", bgcolor: "#ebebeb", minHeight: "100vh"}}>
-            <Grid item xs={2}>
-                <ProductCard />
-            </Grid>
+        <Grid 
+        container 
+        spacing={2} 
+        columns={8} 
+        sx={{p: 4, m: 0, minHeight: "100vh", bgcolor: "#ebebeb" }}
+        >
+            {/* Recorrer el array para renderizar una carta por cada producto */}
+            {
+                items?.map(i => (
+                    <Grid 
+                    item 
+                    sm={1}
+                    key={i.id}
+                    >
+                        <ProductCard
+                            img={i.img}
+                            model={i.model}
+                            price={i.price}
+                        />
+                    </Grid>
+                ))
+            }
         </Grid>
     )
 }
+
+export default CardsContainer

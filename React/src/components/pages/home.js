@@ -1,12 +1,14 @@
+/* Pagina de inicio */
+
+import CardsContainer from "../sections/cardsContainer"
 import Header from "../sections/header"
 import Footer from "../sections/footer"
-import CardsContainer from "../sections/cardsContainer"
 
 const Home = () => {
     return (
         <>
         <Header />
-        <CardsContainer />
+        <CardsContainer peticion="items"/>
         <Footer />
         </>
     )
